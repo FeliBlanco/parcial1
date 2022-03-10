@@ -1,5 +1,4 @@
 import math
-######################## FACUNDO OLMOS
 # --- configuraciones 
 
 MAX_RETIRO = 5000#la cantidad maxima que puede retirar por sesion
@@ -50,7 +49,6 @@ def cobrarComision(userid):
         infoCajero[4] += COMISION
 
 userid = -1
-############################ FACUNDO FALCO
 while(userid == -1):#iniciamos la sesion
     user = int(input("Ingresa tu numero de tarjeta: "))
     if(user == 0):#terminar el sistema si ingresa un numero de tarjeta 0
@@ -65,7 +63,7 @@ while(userid == -1):#iniciamos la sesion
     elif(usuarioInfo[userid][i_bloqueo] != 0):#si esta la cuenta bloqueada
             print("ERROR: Esta cuenta se encuentra bloqueada.")
             userid = -1
-    else:########################TERCERA PARTE#####################################
+    else:
             intentos = 0#reseteamos la variable de intentos
             while(True):
                 pin = int(input("Ingresa el PIN:"))
@@ -92,7 +90,7 @@ while(userid == -1):#iniciamos la sesion
                         print("2. DEPOSITO")
                         print("3. RETIRO")
                         print("4. SALIR")
-                        opcion = int(input("OPCION: "))######################### CUARTA PARTE######################
+                        opcion = int(input("OPCION: "))
                         if(opcion == 1):#ver saldo
                             cobrarComision(userid)#cobramos la comision
                             print("--------------------------------------------------------")
@@ -111,7 +109,7 @@ while(userid == -1):#iniciamos la sesion
                                 print(f"INFO: Depositaste ${dinero}.")
                                 print("--------------------------------------------------------")
                                 cobrarComision(userid)
-                        elif(opcion == 3):#retiro ###################### FELIPE BLANCO
+                        elif(opcion == 3):#retiro
                             dinero = int(input("Ingresa la cantidad a retirar: "))
                             if(dinero > usuarioInfo[userid][i_dinero]):#si no tiene el dinero ingresado en su cuenta
                                 print("ERROR: No hay esa cantidad en tu cuenta bancaria.")
@@ -135,7 +133,6 @@ while(userid == -1):#iniciamos la sesion
                                         if(cantidadb > 0):
                                             infoCajero[5][i] += cantidadb
                                             print(f"Se entrego {cantidadb} billetes de ${billetes[i][0]}")
-                               #################################### FACUNDO OLMOS
                                 if(dinerobuscar == dinero):#si no encontro billetes para entregar
                                     print(f"ERROR: El cajero no puede entregar el monto solicitado.")  
                                 else:#encontro dinero para entregar
@@ -151,7 +148,7 @@ while(userid == -1):#iniciamos la sesion
                                     print("--------------------------------------------------------")
                                     usuarioInfo[userid][i_dinero] -= (dinero - dinerobuscar)
                                     cobrarComision(userid) 
-                        elif(opcion == 4):#salir ########################## SEPTIMA PARTE###########################
+                        elif(opcion == 4):#salir
                             print("Por favor retire su tarjeta.")
                             print("Recuerde usar alcohol en sus manos despues de operar.")
                             userid 
