@@ -151,8 +151,7 @@ while(userid == -1):#iniciamos la sesion
                         elif(opcion == 4):#salir
                             print("Por favor retire su tarjeta.")
                             print("Recuerde usar alcohol en sus manos despues de operar.")
-                            userid 
-                            = -1
+                            userid = -1
                             break
                     break#terminamos el ciclo para introducir el pin
 
